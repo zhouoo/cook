@@ -1,0 +1,48 @@
+
+.search-left-nav1-item, .search-left-nav2-item {
+    width: 155px;
+    height: 28px;
+    margin-bottom: 8px;
+}
+
+.search-left-nav1-item a, .search-left-nav2-item a, .popu-search {
+    display: block;
+    padding-left: 10px;
+    line-height: 28px;
+}
+
+.popu-search {
+    color: #8F8F8F;
+}
+
+.normal-menu-list-item {
+    height: 138px;
+    margin-bottom: 14px;
+    border: 1px solid #f3f3f3;
+    box-sizing: border-box;
+}
+
+.normal-menu-list-pic {
+    width: 215px;
+    height: 136px;
+}
+
+.normal-menu-list-info {
+    padding: 10px 0 0 20px;
+}
+
+.normal-menu-list {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.normal-menu-list-title {
+    display: block;
+    font-size: 20px;
+    line-height: 28px;
+    padding-bottom: 5px;
+}
+
+.menu-num {
+    color: #7CA371;
+}

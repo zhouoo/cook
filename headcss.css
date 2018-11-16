@@ -1,0 +1,90 @@
+/*头部css*/
+#cook-head {
+    width: 100%;
+    z-index: 10;
+    position:fixed;
+    top:0;
+    left:0;
+    height: 70px;
+    background: #fff;
+    line-height: 70px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+#logo {
+    padding-top: 15px;
+    margin-right: 45px;
+    height: 40px;
+    font-size: 0px;
+}
+
+#logo a {
+    width: 120px;
+    height: 40px;
+    background: url('./logo.jpg') no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+}
+
+#sercher {
+    width: 300px;
+    height: 44px;
+    font-size: 16px;
+    color: #212121;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #F2F2F2;
+}
+
+#serch {
+    height: 44px;
+    background-color: #E56444;
+    color: #FEFEFE;
+    margin-left: -8px;
+    padding: 0 16px;
+    font-size: 16px;
+}
+
+#cook-column a {
+    margin-left: 20px;
+    color: #CC4729;
+}
+
+#cook-head-right a {
+    margin-left: 15px;
+    color: #CC4729;
+}
+/*底部css*/
+.foot-content {
+    padding:30px 0 80px;
+}
+.foot660{
+    width: 660px;
+}
+.ad-comp{
+    margin-bottom:20px;
+}
+.ad-comp a{
+    display: inline-block;
+    margin-right:20px;
+    padding:13px 25px;
+    background:#82B368;
+    color:#fff;
+    font-size: 12px;
+}
+.foot-others, .foot-others a,.enounce{
+    color:#A4A4A4;
+    font-size: 12px;
+    line-height:24px;
+}
+.roof{
+    height: 22px;
+}
+.cook-blog,.cook-twitter{
+    display: inline-block;
+    margin-left:10px;
+    background: #E56444;
+    width: 22px;
+    height: 22px;
+}
