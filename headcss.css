@@ -84,7 +84,12 @@
 .cook-blog,.cook-twitter{
     display: inline-block;
     margin-left:10px;
-    background: #E56444;
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
+}
+.cook-blog{
+    background:url(https://s.chuimg.com/simpleicons/sinaweibo.svg);
+}
+.cook-twitter{
+    background:url(https://s.chuimg.com/simpleicons/twitter.svg);
 }

@@ -1,0 +1,634 @@
+//左侧菜单分类----上
+//循环左侧菜单并把其放到左侧
+var data1 = [
+    {
+        name: '家常菜',
+        bpy: 0
+    },
+    {
+        name: '快手菜',
+        bpy: -40
+    },
+    {
+        name:'下饭菜',
+        bpy:-80
+    },
+    {
+        name:'早餐',
+        bpy:-120
+    },
+    {
+        name: '肉',
+        bpy: -160
+    },
+    {
+        name:'鱼',
+        bpy:-200
+    },
+    {   name:'蔬菜',
+        bpy:-240
+    },
+    {
+        name: '鸡蛋',
+        bpy: -280
+    },
+    {
+        name: '汤羹',
+        bpy: -320
+    },
+    {
+        name: '烘焙',
+        bpy: -360
+    },
+    {
+        name: '主食',
+        bpy: -400
+    },
+    {
+        name: '面',
+        bpy: -440
+    },
+    {
+        name: '素食',
+        bpy: -480
+    }
+];
+//左侧菜单分类---下
+var data2 = [
+    {
+        name: '孕妇',
+        bpy: -520
+    },
+    {
+        name:'产妇',
+        bpy: -560
+    },
+    {
+        name: '儿童',
+        bpy: -600
+    },
+    {
+        name: '婴儿',
+        bpy: -640
+    }
+];
+
+//banner图 图片地址及id
+var data3 = [
+    {   name:'法式小面包',
+        url:'http://i2.chuimg.com/9c1298d36c554d539286267a4769da37_2100w_2800h.jpg?imageView2/2/w/660/interlace/1/q/90'
+    },
+    {
+        name:'内脂豆腐牛肉馅小笼包',
+        url:'http://i2.chuimg.com/9404a464460211e7bc9d0242ac110002_1280w_1024h.jpg?imageView2/2/w/660/interlace/1/q/90'
+    },
+    {
+        name:'鸡蛋蔬菜卷饼',
+        url:'http://i2.chuimg.com/f5a9222a8b1911e6a9a10242ac110002_1080w_1080h.jpg?imageView2/2/w/660/interlace/1/q/90'
+    },
+    {
+        name:'芒果千层蛋糕',
+        url:'http://i2.chuimg.com/2c7b3772886611e6b87c0242ac110003_1707w_1080h.jpg?imageView2/2/w/660/interlace/1/q/90'},
+    {
+        name:'黑椒杏鲍菇牛肉粒',
+        url:'http://i2.chuimg.com/516a3a78881711e6a9a10242ac110002_1936w_2592h.jpg?imageView2/2/w/660/interlace/1/q/90'
+    },
+];
+//流行菜单
+var data4 = [
+    {
+        name:'烤贝贝南瓜',
+        url:'http://i2.chuimg.com/9b96b06330504f2abebe2d8d109e2d7c_560w_350h.jpg?imageView2/1/w/150/h/90/interlace/1/q/90'
+    },
+    {
+        name:'秘制家常回锅肉',
+        url:'http://i2.chuimg.com/3d145682a4c611e6947d0242ac110002_2500w_2576h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'梅干菜烧饼',
+        url:'http://i2.chuimg.com/f59f07c18fb24d3ab780de71a147847f_4240w_2832h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'焦糖海盐蛋糕',
+        url:'http://i2.chuimg.com/bc4f22e207f411e7bc9d0242ac110002_720w_540h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'芋儿烧白菜',
+        url:'http://i1.chuimg.com/7ab0fce28aa011e6a9a10242ac110002_2000w_1500h.jpg@2o_50sh_1pr_1l_215w_136h_1c_1e_90q_1wh'
+    },
+    {
+        name:'Poke饭',
+        url:'http://i2.chuimg.com/11c10411ebad4578a47cb6ff0c0c2494_1280w_852h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'芝麻饼干做法（烤箱烤饼干）',
+        url:'http://i2.chuimg.com/0446d6cc88e711e6b87c0242ac110003_600w_400h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'南瓜磅蛋糕',
+        url:'http://i2.chuimg.com/bbfd6b6f43e046d1b6aebf11cb6d431a_1000w_667h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'老上海味道- 淡淡酒酿香的米饭饼',
+        url:'http://i2.chuimg.com/90f08dc733094aaea20de316d3c7a7b3_3264w_2448h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'香菇红萝卜蒸肉饼',
+        url:'http://i2.chuimg.com/53bf5d1e8adb11e6b87c0242ac110003_1820w_1651h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'鸡肉鹰嘴豆咖喱',
+        url:'http://i2.chuimg.com/62a9b43f48514a948d5ab0e35b2ba92b_5184w_3456h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'奶香小米发糕',
+        url:'http://i2.chuimg.com/7c03fad17dec4af8bc3c6c7a0e2caa1a_780w_1040h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'焦糖海盐蛋糕',
+        url:'http://i2.chuimg.com/bc4f22e207f411e7bc9d0242ac110002_720w_540h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'芋儿烧白菜',
+        url:'http://i1.chuimg.com/7ab0fce28aa011e6a9a10242ac110002_2000w_1500h.jpg@2o_50sh_1pr_1l_215w_136h_1c_1e_90q_1wh'
+    },
+    {
+        name:'Poke饭',
+        url:'http://i2.chuimg.com/11c10411ebad4578a47cb6ff0c0c2494_1280w_852h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'芝麻饼干做法（烤箱烤饼干）',
+        url:'http://i2.chuimg.com/0446d6cc88e711e6b87c0242ac110003_600w_400h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'南瓜磅蛋糕',
+        url:'http://i2.chuimg.com/bbfd6b6f43e046d1b6aebf11cb6d431a_1000w_667h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'老上海味道- 淡淡酒酿香的米饭饼',
+        url:'http://i2.chuimg.com/90f08dc733094aaea20de316d3c7a7b3_3264w_2448h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'香菇红萝卜蒸肉饼',
+        url:'http://i2.chuimg.com/53bf5d1e8adb11e6b87c0242ac110003_1820w_1651h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    },
+    {
+        name:'鸡肉鹰嘴豆咖喱',
+        url:'http://i2.chuimg.com/62a9b43f48514a948d5ab0e35b2ba92b_5184w_3456h.jpg?imageView2/1/w/215/h/136/interlace/1/q/90'
+    }
+];
+
+
+//时令食材
+
+var data5=[
+    {
+        name:'山楂',
+        url:'http://i2.chuimg.com/f7fd2c997c9111e58c4ba9bfb5aebcdb.jpg?imageView2/1/w/60/h/60/interlace/1/q/90'
+    },
+    {
+        name:'螃蟹',
+        url:'http://i2.chuimg.com/1327c0a17c9211e595bc9dc38687f4d3.jpg?imageView2/1/w/60/h/60/interlace/1/q/90'
+    },
+    {
+        name:'柚子',
+        url:'http://i1.chuimg.com/eeb5096c7c9111e5922bb82a72e00100.jpg@2o_50sh_1pr_1l_60w_60h_1c_1e_90q_1wh'
+    },
+    {
+        name:'南瓜',
+        url:'http://i2.chuimg.com/f74d8a2b7c9111e5938b45d1d992f1cb.jpg?imageView2/1/w/60/h/60/interlace/1/q/90'
+    },{
+        name:'羊',
+        url:'http://i2.chuimg.com/70d6105409cc4900ae6f5f7f9fa15c7c_800w_600h.jpg?imageView2/1/w/60/h/60/interlace/1/q/90'
+    },
+    {
+        name:'茼蒿',
+        url:'http://i2.chuimg.com/0a54bc807c9211e584ca9dc38687f4d3.jpg?imageView2/1/w/60/h/60/interlace/1/q/90'
+    },
+    {
+        name:'萝卜',
+        url:'http://i2.chuimg.com/49739ad17c9211e5a9977f0741f94ddb.jpg?imageView2/1/w/60/h/60/interlace/1/q/90'
+    },
+    {
+        name:'平菇',
+        url:'http://i2.chuimg.com/ebe294f07c9111e596b09dc38687f4d3.jpg?imageView2/1/w/60/h/60/interlace/1/q/90'
+    },
+    {
+        name:'红薯',
+        url:'http://i2.chuimg.com/030c7d5c7c9211e5bd3845d1d992f1cb.jpg?imageView2/1/w/60/h/60/interlace/1/q/90'
+    },
+    {
+        name:'梭子蟹',
+        url:'http://i1.chuimg.com/09667bcc7c9211e5b02b9dc38687f4d3.jpg@2o_50sh_1pr_1l_60w_60h_1c_1e_90q_1wh'
+    },
+    {
+        name:'鲫鱼',
+        url:'http://i2.chuimg.com/1fbfe9477c9211e5b0117f0741f94ddb.jpg?imageView2/1/w/60/h/60/interlace/1/q/90'
+    },
+    {
+        name:'芋头',
+        url:'http://i2.chuimg.com/07cef4ee7c9211e5ad73a9bfb5aebcdb.jpg?imageView2/1/w/60/h/60/interlace/1/q/90'
+    }
+];
+
+//话题
+
+var data6 = [
+    {
+        name:'#e家的食材花园#',
+        info:'开始尝试自己种植蔬果的初衷，是渴望获取更新鲜和健康的食材，从播种开始就期待结果...',
+        url:[
+            'http://i2.chuimg.com/fe8f6f7f69464cc3b0c72312a73961b0_3637w_5449h.jpg?imageView2/1/w/280/h/280/interlace/1/q/90',
+            'http://i2.chuimg.com/6a0a510a10b74acba77e594dc9438407_1280w_853h.jpg?imageView2/1/w/280/h/280/interlace/1/q/90',
+            'http://i2.chuimg.com/e4691dc3c2b3448ab605b267fc333385_6000w_4000h.jpg?imageView2/1/w/280/h/280/interlace/1/q/90'
+        ]
+    },
+    {
+        name:'#家味#',
+        info:'从家里和夫家千里迢迢背来的食材，两家四老的浓浓心意。每年离家装箱时嫌多怕重，滚回...',
+        url:[
+            'http://i1.chuimg.com/5b2cded4a16411e5bcecb82a72e00100.jpg@2o_50sh_1pr_1l_280w_280h_1c_1e_90q_1wh',
+            'http://i2.chuimg.com/d2179db5a3f511e594563ff0678eae4c.jpg?imageView2/1/w/280/h/280/interlace/1/q/90',
+            'http://i2.chuimg.com/56824bbca0d311e5a06db82a72e00100.jpg?imageView2/1/w/280/h/280/interlace/1/q/90'
+        ]
+    },
+    {
+        name:'#为自己做份便当#',
+        info:'亲手为自己做一份便当，认真生活，好好吃饭。',
+        url:[
+            'http://i2.chuimg.com/b1f7a820b8eb44aaa0325fb22a1801f9_960w_1200h.jpg?imageView2/1/w/280/h/280/interlace/1/q/90',
+            'http://i2.chuimg.com/707f828d52354563bb829a79dd2186ff_1280w_960h.jpg?imageView2/1/w/280/h/280/interlace/1/q/90',
+            'http://i2.chuimg.com/031adaccd27a4d83b79e20794cad0672_1280w_960h.jpg?imageView2/1/w/280/h/280/interlace/1/q/90'
+        ]
+    },
+    {
+        name:'#作死面包养成记#',
+        info:'撸面包呀...',
+        url:[
+            'http://i2.chuimg.com/91dc94aac44611e6bc9d0242ac110002_1280w_1280h.jpg?imageView2/1/w/280/h/280/interlace/1/q/90',
+            'http://i2.chuimg.com/340ea806b40f42c7a37a273e6ec7ec3b_960w_1200h.jpg?imageView2/1/w/280/h/280/interlace/1/q/90',
+            'http://i2.chuimg.com/53276be4013c42f6be38efa0d6fc0e65_720w_540h.jpg?imageView2/1/w/280/h/280/interlace/1/q/90'
+        ]
+    },
+    {
+        name:'#24小时流行作品#',
+        info:'每张照片背后都有故事，几句寒暄传递生活的力量。',
+        url:[
+            'http://i1.chuimg.com/ee1c83cb17e04f8dba44b3b4bef90068_1080w_720h.jpg@2o_50sh_1pr_1l_280w_280h_1c_1e_90q_1wh',
+            'http://i2.chuimg.com/0a931694ee8946dc82a36547f6c57366_1080w_1080h.jpg?imageView2/1/w/280/h/280/interlace/1/q/90',
+            'http://i2.chuimg.com/3e33eb568b4f446eb310236545f15df6_1080w_1080h.jpg?imageView2/1/w/280/h/280/interlace/1/q/90'
+        ]
+    }
+]
+
+//流行搜索
+
+var data7 = [
+    {
+        name:'早餐'
+    },
+    {
+        name:'雪花酥'
+    },
+    {
+        name:'红烧肉'
+    },
+    {
+        name:'烤红薯'
+    },
+    {
+        name:'可乐鸡翅'
+    },
+    {
+        name:'披萨'
+    },
+    {
+        name:'麻辣香锅'
+    },
+    {
+        name:'麻辣烫'
+    },
+    {
+        name:'火锅高汤'
+    },
+    {
+        name:'火腿'
+    }
+]
+
+
+//分类浏览
+
+var data8 = [
+    {
+        name:'热门专题',
+        classify:[
+            {
+                title:'特色小吃',
+                classify:[
+                    {
+                      name:'小吃',
+                        id:1000
+                    },
+                    {
+                        name:'沙拉',
+                        id:1001
+                    },
+                    {
+                        name:'凉菜',
+                        id:1002
+                    },
+                    {
+                        name:'零食',
+                        id:1003
+                    },
+                    {
+                        name:'三明治',
+                        id:1004
+                    }
+                ]
+            },
+            {
+                title:'菜式',
+                classify:[
+                    {
+                        name:'家常菜',
+                        id:1000
+                    },
+                    {
+                        name:'下饭菜',
+                        id:1001
+                    },
+                    {
+                        name:'快手菜',
+                        id:1002
+                    },
+                    {
+                        name:'大鱼大肉',
+                        id:1003
+                    },
+                    {
+                        name:'下酒菜',
+                        id:1004
+                    }
+                ]
+            },
+            {
+                title:'特殊场合',
+                classify:[
+                    {
+                        name:'早餐',
+                        id:1000
+                    },
+                    {
+                        name:'下午茶',
+                        id:1001
+                    },
+                    {
+                        name:'便当',
+                        id:1002
+                    },
+                    {
+                        name:'圣诞节',
+                        id:1003
+                    },
+                    {
+                        name:'年夜饭',
+                        id:1004
+                    },
+                    {
+                        name:'便当',
+                        id:1002
+                    },
+                    {
+                        name:'圣诞节',
+                        id:1003
+                    },
+                    {
+                        name:'年夜饭',
+                        id:1004
+                    }
+                ]
+            },
+            {
+                title:'特色小吃',
+                classify:[
+                    {
+                        name:'小吃',
+                        id:1000
+                    },
+                    {
+                        name:'沙拉',
+                        id:1001
+                    },
+                    {
+                        name:'凉菜',
+                        id:1002
+                    }
+                ]
+            },
+            {
+                title:'特色小吃',
+                classify:[
+                    {
+                        name:'小吃',
+                        id:1000
+                    },
+                    {
+                        name:'沙拉',
+                        id:1001
+                    },
+                    {
+                        name:'凉菜',
+                        id:1002
+                    },
+                    {
+                        name:'零食',
+                        id:1003
+                    },
+                    {
+                        name:'三明治',
+                        id:1004
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name:'热门专题',
+        classify:[
+            {
+                title:'特色小吃',
+                classify:[
+                    {
+                        name:'小吃',
+                        id:1000
+                    },
+                    {
+                        name:'沙拉',
+                        id:1001
+                    },
+                    {
+                        name:'凉菜',
+                        id:1002
+                    },
+                    {
+                        name:'零食',
+                        id:1003
+                    },
+                    {
+                        name:'三明治',
+                        id:1004
+                    }
+                ]
+            },
+            {
+                title:'特殊场合',
+                classify:[
+                    {
+                        name:'早餐',
+                        id:1000
+                    },
+                    {
+                        name:'下午茶',
+                        id:1001
+                    },
+                    {
+                        name:'便当',
+                        id:1002
+                    },
+                    {
+                        name:'圣诞节',
+                        id:1003
+                    },
+                    {
+                        name:'年夜饭',
+                        id:1004
+                    },
+                    {
+                        name:'便当',
+                        id:1002
+                    },
+                    {
+                        name:'圣诞节',
+                        id:1003
+                    },
+                    {
+                        name:'年夜饭',
+                        id:1004
+                    }
+                ]
+            },{
+                title:'菜式',
+                classify:[
+                    {
+                        name:'家常菜',
+                        id:1000
+                    },
+                    {
+                        name:'下饭菜',
+                        id:1001
+                    },
+                    {
+                        name:'快手菜',
+                        id:1002
+                    },
+                    {
+                        name:'大鱼大肉',
+                        id:1003
+                    },
+                    {
+                        name:'下酒菜',
+                        id:1004
+                    }
+                ]
+            },
+            {
+                title:'特色小吃',
+                classify:[
+                    {
+                        name:'小吃',
+                        id:1000
+                    },
+                    {
+                        name:'沙拉',
+                        id:1001
+                    },
+                    {
+                        name:'凉菜',
+                        id:1002
+                    }
+                ]
+            },
+            {
+                title:'特色小吃',
+                classify:[
+                    {
+                        name:'小吃',
+                        id:1000
+                    },
+                    {
+                        name:'沙拉',
+                        id:1001
+                    },
+                    {
+                        name:'凉菜',
+                        id:1002
+                    },
+                    {
+                        name:'零食',
+                        id:1003
+                    },
+                    {
+                        name:'三明治',
+                        id:1004
+                    }
+                ]
+            }
+        ]
+    }
+]
+
+//详情页
+var data9 = [
+    {
+        name:'可乐鸡翅',
+        id:'666666',
+        author:'冇伱灬冇我',
+        img:'http://i2.chuimg.com/4cc69abf020c409790c6f73407b8c184_160w_160h.jpg?imageView2/1/w/60/h/60/interlace/1/q/90',
+        thing:[
+            {
+                name:'香肠',
+                unit:'4条'
+            },
+            {
+                name:'莫扎里拉奶酪丝',
+                unit:'1-1/2 杯'
+            },
+            {
+                name:'杏仁粉',
+                unit:'250g'
+            },
+            {
+                name:'奶油乳酪',
+                unit:'2 汤匙'
+            },
+            {
+                name:'全蛋',
+                unit:'1 粒'
+            },
+            {
+                name:'配料',
+                unit:'(按自己喜欢口味）'
+            },
+            {
+                name:'姜粉',
+                unit:'适量'
+            },
+            {
+                name:'蒜末粉',
+                unit:'适量'
+            }
+        ]
+    }
+]

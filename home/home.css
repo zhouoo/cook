@@ -17,9 +17,9 @@
 
 .menu-classify .cat-icon {
     display: inline-block;
-    background: #E56444;
     width: 32px;
     height: 32px;
+    background-image: url(./xuebi.png);
     margin-right: 16px;
     vertical-align: middle;
 }
@@ -44,33 +44,48 @@
 
 .banner {
     width: 490px;
-    /*overflow: hidden;*/
+    height: 300px;
+    overflow: hidden;
 }
 
 #recom-banner {
     position: relative;
 }
 
+.recom-banner-a {
+    width: 490px;
+    overflow: hidden;
+}
+.recom-banner-title{
+    position:absolute;
+    top:200px;
+    left:20px;
+    color:#fff;
+    font-size: 40px;
+}
 #recom-banner .recom-banner-pic {
     display: inline-block;
     position: absolute;
     top: 0;
+    width: 490px;
     height: 280px;
+    vertical-align: bottom;
 }
 
 .dots {
     width: 100%;
     position: absolute;
-    bottom: 1px;
+    bottom: -30px;
     text-align: center;
 }
 
-.dot {
+.dots li {
     display: inline-block;
+    margin: 0 3px;
     width: 10px;
     height: 10px;
     text-indent: -999em;
-    border: 2px solid #fff;
+    border: 2px solid #000;
     border-radius: 6px;
     cursor: pointer;
     opacity: .4;
@@ -78,11 +93,11 @@
     -moz-transition: background .5s, opacity .5s;
     transition: background .5s, opacity .5s;
 }
-.dot.active{
-    background: #fff;
-    opacity: 1;
 
+.dots li.on {
+    background: #000;
 }
+
 .unslider-arrow04 {
     position: absolute;
     width: 20px;
@@ -100,7 +115,6 @@
 
 }
 
-
 #new-menu {
     width: 490px;
     overflow: hidden;
@@ -108,39 +122,40 @@
 }
 
 #new-menu-list-column {
-    position:relative;
+    position: relative;
     height: 135px;
-    margin-left:-12.25px;
+    margin-left: -12.25px;
 
 }
 
-
 .new-menu-list {
-    position:absolute;
+    position: absolute;
     width: 490px;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
 }
 
 .new-menu-list li {
     width: 150px;
-    margin:0 12.25px;
+    margin: 0 12.25px;
 }
 
 .new-menu-list a {
     display: inline-block;
     width: 150px;
-    height: 90px;
-    background: #E56444;
+    height: 95px;
+    /*background: #E56444;*/
 }
 
 .new-menu-item-name {
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
     font-size: 16px;
     font-weight: normal;
     text-align: center;
     line-height: 28px;
 }
-
 
 #recently-popular-list {
     width: 490px;
@@ -214,7 +229,6 @@
 
 .seasonable-food-pic {
     display: inline-block;
-    background: #E56444;
     width: 60px;
     height: 60px;
 }
@@ -272,18 +286,18 @@
     margin-bottom: 40px;
 }
 
-.popular-search-list{
+.popular-search-list {
     height: 170px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
+
 .popular-search-list li {
     width: 126px;
     height: 28px;
     line-height: 28px;
     margin-bottom: 5px;
-    background: #000;
 }
 
 .popular-search-list i {
@@ -300,6 +314,7 @@
 
 .popular-search-item span {
     display: inline-block;
+    vertical-align: middle;
 }
 
 .popular-search-ranking {
@@ -308,7 +323,10 @@
 }
 
 .popular-search-name {
-    width: 60px;
+    width: 80px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
 }
 
 .popular-menu {
